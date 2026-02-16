@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>User Login</h2>
+
+    <form onsubmit="return validateLogin()">
+
+        <input type="email" id="email" placeholder="Email" required>
+
+        <input type="password" id="password" placeholder="Password" required>
+
+        <p class="error" id="errorMsg"></p>
+
+        <button type="submit">Login</button>
+
+    </form>
+
+    <div class="link">
+        New user? <a href="register.html">Register</a>
+    </div>
+</div>
+
+<script>
+function validateLogin() {
+
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    let error = document.getElementById("errorMsg");
+
+    if (password.length < 8) {
+        error.textContent = "Password must be at least 8 characters";
+        return false;
+    }
+
+    return true;
+}
+</script>
+
+</body>
+</html>
